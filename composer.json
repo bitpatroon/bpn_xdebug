@@ -1,0 +1,31 @@
+{
+    "name": "bitpatroon/bpn_xdebug",
+    "type": "typo3-cms-extension",
+    "description": "Adds a xdebug toggle in the TYPO3 backend",
+    "keywords": [
+        "typo3",
+        "xdebug",
+        "hooks"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Sjoerd Zonneveld",
+            "homepage": "https://www.bitpatroon.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "typo3/cms-core": "^10.3"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "BPN\\BpnXdebug\\": "Classes"
+        }
+    }
+}

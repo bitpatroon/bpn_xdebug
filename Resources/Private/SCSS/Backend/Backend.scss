@@ -1,0 +1,24 @@
+#typo3-cms-backend-backend-toolbaritems-tx_bpnxdebug {
+    cursor: pointer;
+    min-width: 45px;
+    font-weight: bold;
+    padding: 0 10px;
+    line-height: 45px;
+    vertical-align: middle;
+
+    &:hover {
+        border-left-color: #373737;
+        background-color: #333333;
+        color: #FFFFFF;
+    }
+
+    &.enabled {
+        color: #FFFFFF;
+        background-color: #4CAF50;
+
+        &:hover {
+            background-color: #4ebe52;
+        }
+    }
+}
+
