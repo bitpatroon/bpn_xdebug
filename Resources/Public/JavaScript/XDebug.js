@@ -23,7 +23,7 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-define(['jquery'], function($){
+define(['jquery'], function ($) {
     var self = this;
 
     var XDEBUG_COOKIENAME = 'XDEBUG_SESSION';
@@ -34,7 +34,7 @@ define(['jquery'], function($){
     self.createControl = function () {
 
         var id = 'typo3-cms-backend-backend-toolbaritems-tx_bpnxdebug';
-        var newControl = '<li class="toolbar-item t3js-toolbar-item" id="' + id+ '">XDebug</li>';
+        var newControl = '<li class="toolbar-item t3js-toolbar-item" id="' + id + '">XDebug</li>';
         $('.t3js-topbar-toolbar .toolbar-item-search').before(newControl);
 
         var $topbarItems = $('.scaffold-toolbar.t3js-scaffold-toolbar .toolbar-list');
@@ -56,13 +56,17 @@ define(['jquery'], function($){
     };
 
     self.getCookie = function (name) {
-        if (name === null) return null;
+        if (name === null) {
+            return null;
+        }
 
-        var nameEQ = name + "=";
+        var nameEQ = name + '=';
         var ca = document.cookie.split(';');
         for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
-            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1, c.length);
+            }
             if (c.indexOf(nameEQ) === 0) {
                 return c.substring(nameEQ.length, c.length).trim();
             }
@@ -81,9 +85,9 @@ define(['jquery'], function($){
             /** @type {Date} */
             var date = new Date();
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
+            expires = '; expires=' + date.toUTCString();
         }
-        document.cookie = name + "=" + value + expires + "; path=/";
+        document.cookie = name + '=' + value + expires + '; path=/';
     };
 
     self.removeCookie = function (name) {

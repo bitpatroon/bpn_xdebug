@@ -1,4 +1,5 @@
 <?php
+
 /***************************************************************
  *  Copyright notice
  *
@@ -28,18 +29,13 @@ namespace BPN\BpnXdebug\BackEnd;
 
 use TYPO3\CMS\Core\Page\PageRenderer;
 
-/**
- * Class BackEndController
- * @author  : SZO
- * @fqn     : BPN\BpnXdebug\BackEnd\BackEndController
- */
 class BackEndController
 {
 
     /**
      * Hook
-     * @param array $params The parameter Array
-     * @param \TYPO3\CMS\Backend\Controller\BackendController $ref The parent object
+     * @param array                                           $params The parameter Array
+     * @param \TYPO3\CMS\Backend\Controller\BackendController $ref    The parent object
      */
     public function renderPreProcess(&$params, $ref)
     {
@@ -52,13 +48,12 @@ class BackEndController
 
     /**
      * Hook
-     * @param array $params The parameter Array
-     * @param \TYPO3\CMS\Backend\Controller\BackendController $ref The parent object
+     * @param array                                           $params The parameter Array
+     * @param \TYPO3\CMS\Backend\Controller\BackendController $ref    The parent object
+     *
+     * @noinspection PhpUnusedParameterInspection
      */
-    private function addXDebugToggle(/** @noinspection PhpUnusedParameterInspection */
-        &$params,
-        $ref
-    )
+    private function addXDebugToggle(&$params, $ref)
     {
         $folder = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bpn_xdebug');
 
@@ -67,5 +62,4 @@ class BackEndController
         $pageRenderer->loadRequireJsModule('TYPO3/CMS/BpnXdebug/XDebug');
         $pageRenderer->addCssFile($folder . 'Resources/Public/CSS//Backend.css');
     }
-
 }
